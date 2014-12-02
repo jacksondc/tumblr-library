@@ -1,156 +1,157 @@
 <!DOCTYPE html>
 <html lang="{block:English}en{/block:English}{block:French}fr{/block:French}{block:German}de{/block:German}{block:Japanese}ja{/block:Japanese}{block:Italian}it{/block:Italian}{block:Spanish}es{/block:Spanish}{block:Polish}pl{/block:Polish}">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <meta name="viewport" content="width=device-width">
-
-  <meta name="color:Highlight Color" content="#3498db"/>
-  <meta name="color:Reading Color" content="#27ae60"/>
-  <meta name="color:Favorite Color" content="#e74c3c"/>
-  <meta name="color:Fiction Color" content="#f39c12"/>
-  <meta name="color:Nonfiction Color" content="#34495e"/>
-  <meta name="color:Text Color" content="#444"/>
-  <meta name="text:Title Font" content="Gibson"/>
-  <meta name="text:Google Fonts Title URL" content=""/>
-  <meta name="text:Body Font" content="PT Serif"/>
-  <meta name="text:Google Fonts Body URL" content="PT+Serif"/>
-  <meta name="text:Epoch year" content="0000"/>
-  <meta name="text:Footer text" content="Copyright 2014"/>
-  <meta name="image:Background Image" content="http://static.tumblr.com/0om1tgw/HLIn78wnm/squairy_light_625.png"/>
-  <meta name="if:Show favorites link" content="1"/>
-  <meta name="if:Show fiction link" content="1"/>
-  <meta name="if:Show nonfiction link" content="1"/>
-  <meta name="if:Show reading link" content="0"/>
-  <meta name="if:Show favorites tag" content="1"/>
-  <meta name="if:Show fiction tag" content="0"/>
-  <meta name="if:Show nonfiction tag" content="0"/>
-  <meta name="if:Show reading tag" content="1"/>
-  <meta name="if:Show archive link" content="0"/>
-  <meta name="if:Use infinite scrolling" content="1"/>
-  <meta name="if:Disable Tumblr controls" content="0"/>
-  <meta name="if:Use Epoch Year" content="0"/>
-
-  <link href='http://fonts.googleapis.com/css?family={text:Google Fonts Title URL}' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family={text:Google Fonts Body URL}' rel='stylesheet' type='text/css'>
-
-  <title>{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}</title>
-  {block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
-
-
-  {block:IfUseInfiniteScrolling}
-      <script src="http://static.tumblr.com/0om1tgw/cRKn9lbjb/scroll.js"></script>
-  {/block:IfUseInfiniteScrolling}
-
-  <script type="text/javascript">
-      function date(context, month, year) {
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<meta name="viewport" content="width=device-width">
+	
+	<meta name="color:Highlight Color" content="#3498db"/>
+	<meta name="color:Reading Color" content="#27ae60"/>
+	<meta name="color:Favorite Color" content="#e74c3c"/>
+	<meta name="color:Fiction Color" content="#f39c12"/>
+	<meta name="color:Nonfiction Color" content="#34495e"/>
+	<meta name="color:Text Color" content="#444"/>
+	<meta name="text:Title Font" content="Gibson"/>
+	<meta name="text:Google Fonts Title URL" content=""/>
+	<meta name="text:Body Font" content="PT Serif"/>
+	<meta name="text:Google Fonts Body URL" content="PT+Serif"/>
+	<meta name="text:Epoch year" content="0000"/>
+	<meta name="text:Footer text" content="Copyright 2014"/>
+	<meta name="image:Background Image" content="http://static.tumblr.com/0om1tgw/HLIn78wnm/squairy_light_625.png"/>
+	<meta name="if:Show favorites link" content="1"/>
+	<meta name="if:Show fiction link" content="1"/>
+	<meta name="if:Show nonfiction link" content="1"/>
+	<meta name="if:Show reading link" content="0"/>
+	<meta name="if:Show favorites tag" content="1"/>
+	<meta name="if:Show fiction tag" content="0"/>
+	<meta name="if:Show nonfiction tag" content="0"/>
+	<meta name="if:Show reading tag" content="1"/>
+	<meta name="if:Show archive link" content="0"/>
+	<meta name="if:Use infinite scrolling" content="1"/>
+	<meta name="if:Disable Tumblr controls" content="0"/>
+	<meta name="if:Use Epoch Year" content="0"/>
+	
+	<link href='http://fonts.googleapis.com/css?family={text:Google Fonts Title URL}' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family={text:Google Fonts Body URL}' rel='stylesheet' type='text/css'>
+	
+	<title>{Title}{block:PostSummary} &mdash; {PostSummary}{/block:PostSummary}</title>
+	{block:Description}<meta name="description" content="{MetaDescription}">{/block:Description}
+	
+	
+	{block:IfUseInfiniteScrolling}
+	    <script src="http://static.tumblr.com/0om1tgw/cRKn9lbjb/scroll.js"></script>
+	{/block:IfUseInfiniteScrolling}
+	
+	<script type="text/javascript">
+	    function date(context, month, year) {
             var epoch = {text:Epoch year};
-
+            
             if(year < epoch) {
                 final = 'Before ' + epoch;
             } else {
                 final = month + " " + year;
             }
-
+            
             context.parentNode.innerHTML = final;
-      }
-  </script>
+	    }
+	</script>
 
-  <link rel="apple-touch-icon" href="{PortraitURL-128}">
-  <link rel="shortcut icon" href="{Favicon}">
-  <link rel="alternate" type="application/rss+xml" href="{RSS}">
-  <!--Normalize 3.0.0 CSS-->
-  <link rel="stylesheet" href="http://static.tumblr.com/cqczc5x/FJTn2lpnz/normalize.css" type="text/css" media="all">
-  <style type="text/css">
-    /*Tumblr inherited */
-    {block:IfDisableTumblrControls}
-        iframe#tumblr_controls { display:none; }
-    {/block:IfDisableTumblrControls}
-    .search_query {}
-    .read_more_container a {}
-
-    body {
-        font-family:{text:Body Font}, sans-serif;
-        background:#f5f5f5;
-        background-image:url({image:Background Image});
-        padding:2rem;
-        color:{color:Text Color};
-        position:relative;
-    }
-
-    footer {
-        font-size:0.875rem;
-            position:absolute;
-            bottom:0;
-            left:0; right:0;
+	<link rel="apple-touch-icon" href="{PortraitURL-128}">
+	<link rel="shortcut icon" href="{Favicon}">
+	<link rel="alternate" type="application/rss+xml" href="{RSS}">
+	<!--Normalize 3.0.0 CSS-->
+	<link rel="stylesheet" href="http://static.tumblr.com/cqczc5x/FJTn2lpnz/normalize.css" type="text/css" media="all">
+	<style type="text/css">
+		/*Tumblr inherited */
+		{block:IfDisableTumblrControls}
+		    iframe#tumblr_controls { display:none; }
+		{/block:IfDisableTumblrControls}
+		.search_query {}
+		.read_more_container a {}
+		
+		body {
+		    font-family:{text:Body Font}, sans-serif;
+		    background:#f5f5f5;
+		    background-image:url({image:Background Image});
+		    padding:2rem;
+		    color:{color:Text Color};
+		    position:relative;
+		}
+		
+		footer {
+		    font-size:0.875rem;
             text-align:center;
             text-transform:uppercase;
-            margin-bottom:2rem;
         }
-
+        
         footer p {
             margin:0;
         }
-
+        
         .post:last-child {
-            margin-bottom:3rem;
+            margin-bottom:2rem;
         }
-
-    .content {
-        max-width:700px;
-        margin:0 auto;
-    }
-
-    .author p {
-        display:inline;
-    }
-
-    a {
-        text-decoration:none;
-        color:{color:Highlight Color};
-        padding-bottom:1px;
-        border:1px solid transparent;
-
+		
+		.content {
+		    max-width:700px;
+		    margin:0 auto;
+		}
+		
+		.author p {
+		    display:inline;
+		}
+		
+		a {
+		    text-decoration:none;
+		    color:{color:Highlight Color};
+		    padding-bottom:1px;
+		    border:1px solid transparent;
+		    
             -webkit-transition: all 0.2s ease-in-out;
             -moz-transition: all 0.2s ease-in-out;
             -ms-transition: all 0.2s ease-in-out;
             -o-transition: all 0.2s ease-in-out;
             transition: all 0.2s ease-in-out;
         }
-
-    a:hover {
-        border-bottom:1px solid {color:Highlight Color};
-    }
-
-    h1 {
-        font-family:{text:Title Font}, serif;
-        text-align:center;
-        font-size:6rem;
-        margin:2rem 0 1rem 0;
-        line-height:1;
-    }
-
-    h1 a, a.jump-page:hover, footer a {
-        color:{color:Text Color};
-    }
-
-    h1 a, h1 a:hover, a.jump-page, a.jump-page:hover, a.button, a.button:hover, footer a, footer a:hover {
-        border:none;
-    }
-
-    h2 {
-        margin-top:0.5rem;
-        font-size:1.25rem;
-    }
-
-    h2, nav {
-        display:inline-block;
-    }
-
-    #subheading {
-        text-align:center;
-    }
-
+		
+		a:hover {
+		    color:{color:Text Color};
+		}
+		
+		h1 {
+		    font-family:{text:Title Font}, serif;
+		    text-align:center;
+		    font-size:6rem;
+		    margin:2rem 0 1rem 0;
+		    line-height:1;
+		}
+		
+		h1 a, a.jump-page:hover, footer a {
+		    color:{color:Text Color};
+		}
+		
+		a.button:hover {
+		    color:#eee;
+		}
+		
+		footer a:hover {
+		    color:{color:Highlight Color};
+		}
+		
+		h2 {
+		    margin-top:0.5rem;
+		    font-size:1.25rem;
+		}
+		
+		h2, nav {
+		    display:inline-block;
+		    margin:0.5rem;
+		}
+		
+		#subheading {
+		    text-align:center;
+		}
+		
         .link {
             border:1px solid #888;
             border-radius:5px;
@@ -158,12 +159,12 @@
             margin:1rem 0;
             display:block;
         }
-
+        
         .description, nav {
             text-align:center;
             font-weight:normal;
         }
-
+        
         .box {
             color:#FFF;
             padding:0.1rem 0.25rem;
@@ -171,50 +172,50 @@
             margin:0 0.25rem;
             background-color:{color:Highlight Color};
         }
-
+        
         nav .button {
             margin-bottom: 0.5rem;
             display: inline-block;
         }
-
+        
         .box:first-child {
             margin-left:0;
         }
-
+        
         .tag-favorite, .button-favorite {
             background-color:{color:Favorite Color};
         }
-
+          
         .tag-reading, .button-reading {
             background-color:{color:Reading Color};
-        }
-
+        }  
+        
         .tag-fiction, .button-fiction {
             background-color:{color:Fiction Color};
         }
-
+        
         .tag-nonfiction, .button-nonfiction {
             background-color:{color:Nonfiction Color};
         }
-
+        
         {block:IndexPage}
         .tag.tag-favorite {
             {block:IfNotShowFavoritesTag}display:none;{/block:IfNotShowFavoritesTag}
         }
-
+        
         .tag.tag-reading {
             {block:IfNotShowReadingTag}display:none;{/block:IfNotShowReadingTag}
         }
-
+        
         .tag.tag-fiction {
             {block:IfNotShowFictionTag}display:none;{/block:IfNotShowFictionTag}
         }
-
+        
         .tag.tag-nonfiction {
             {block:IfNotShowNonfictionTag}display:none;{/block:IfNotShowNonfictionTag}
         }
         {/block:IndexPage}
-
+        
         .button {
             -webkit-transition: background-color 0.2s ease-in-out;
             -moz-transition: background-color 0.2s ease-in-out;
@@ -222,61 +223,66 @@
             -o-transition: background-color 0.2s ease-in-out;
             transition: background-color 0.2s ease-in-out;
         }
-
+        
         .hidden {
             display:none;
         }
-
-    .pull-right {
-        float:right;
-    }
-
-    .book {
-        float:left;
-    }
-
-    .link:after {
+        
+		.pull-right {
+		    float:right;
+		}
+		
+		.book {
+		    float:left;
+		}
+		
+		.link:after {
           content: "";
           display: table;
           clear: both;
         }
-
+            
         .show-all {
             margin-right:2rem;
         }
-
+        
+        .pagination {
+            text-align:center;
+            margin-bottom:1rem;
+        }
+        
         @media only screen and (max-width:740px) {
             h1 {
                 font-size:5rem;
             }
         }
-
+        
         @media only screen and (max-width:630px) {
             h1 {
                 font-size:4rem;
             }
         }
-
-
+        
+        
         @media only screen and (max-width:520px) {
             h1 {
                 font-size:3rem;
                 margin-top:0;
             }
-
+            
             .pull-right {
                 display:block;
                 float:none;
             }
-
+            
             .post {
                 text-align:center;
             }
-
+            
             .book {
                 width:100%;
             }
-
+            
             .tag {
                 margin-top:0.5rem;
             }
@@ -285,19 +291,19 @@
                 display:inline-block;
             }
         }
-  </style>
-  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	</style>
+	<!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 </head>
 <body>
-  <header id="header">
-    <h1><a href="/">{Title}</a></h1>
-  </header>
-
-  <section class="content">
-
-      <div id="subheading">
-          {block:ShowDescription}
-            <h2 class="description">{Description}</h2>
+	<header id="header">
+		<h1><a href="/">{Title}</a></h1>
+	</header>
+	
+	<section class="content">
+    	
+    	<div id="subheading">
+        	{block:ShowDescription}
+    		    <h2 class="description">{Description}</h2>
             {/block:ShowDescription}
             <nav>
                 {block:TagPage}
@@ -322,63 +328,64 @@
             </nav>
         </div>
 
-    {block:Posts}
-    <article class="post">
+		{block:Posts}
+		<article class="post">
+			
+			{block:Link}
+    			<div class="link">
+    				    <span class="book">
+    				        <a href="{URL}" {Target}>{Name}</a>
+    				        {block:Description}<span class="author">{Description}</span>{/block:Description}
+    				    </span>
+    				    
+    				    <span class="pull-right">
+    				    
+    				    {block:Tags}
+    				        <span class="tag box tag-{Tag}">{Tag}</span>
+    				    {/block:Tags}
+    				    
+    				    
+            			{block:IfUseEpochYear}
+            			    {block:Date}
+                			    <span class="date">
+            			            <img src='http://static.tumblr.com/0om1tgw/VGyn9ll2i/transparent.gif' onload="date(this, '{Month}', '{Year}');" />
+                			    </span>
+                			{/block:Date}
+            			{/block:IfUseEpochYear}
+            			{block:IfNotUseEpochYear}
+                			{block:Date}
+                			    <span class="date">
+                			        {Month} {Year}
+                			    </span>
+                			{/block:Date}
+            			{/block:IfNotUseEpochYear}
+            			
+            			</span>
+    			</div>
+			{/block:Link}
+		</article>
+		{/block:Posts}
 
-      {block:Link}
-          <div class="link">
-                <span class="book">
-                    <a href="{URL}" {Target}>{Name}</a>
-                    {block:Description}<span class="author">{Description}</span>{/block:Description}
-                </span>
-
-                <span class="pull-right">
-
-                {block:Tags}
-                    <span class="tag box tag-{Tag}">{Tag}</span>
-                {/block:Tags}
-
-
-                  {block:IfUseEpochYear}
-                      {block:Date}
-                          <span class="date">
-                              <img src='http://static.tumblr.com/0om1tgw/VGyn9ll2i/transparent.gif' onload="date(this, '{Month}', '{Year}');" />
-                          </span>
-                      {/block:Date}
-                  {/block:IfUseEpochYear}
-                  {block:IfNotUseEpochYear}
-                      {block:Date}
-                          <span class="date">
-                              {Month} {Year}
-                          </span>
-                      {/block:Date}
-                  {/block:IfNotUseEpochYear}
-
-                  </span>
-          </div>
-      {/block:Link}
-    </article>
-    {/block:Posts}
-
-    {block:IfNotUseInfiniteScrolling}
-        {block:Pagination}
-        <div class="pagination">
-          {block:PreviousPage}<a class="prev" href="{PreviousPage}">{lang:Previous}</a>{/block:PreviousPage}
-
-          {block:JumpPagination length="5"}
-            {block:CurrentPage}<span class="current-page">{PageNumber}</span>{/block:CurrentPage}
-            {block:JumpPage}<a class="jump-page" href="{URL}">{PageNumber}</a>{/block:JumpPage}
-          {/block:JumpPagination}
-
-          {block:NextPage}<a class="next" href="{NextPage}">{lang:Next}</a>{/block:NextPage}
-        </div>
-        {/block:Pagination}
-    {/block:IfNotUseInfiniteScrolling}
-  </section><!--close content-->
+		{block:IfNotUseInfiniteScrolling}
+    		{block:Pagination}
+    		<div class="pagination">
+    			{block:PreviousPage}<a class="prev" href="{PreviousPage}">{lang:Previous}</a>{/block:PreviousPage}
+    
+    			{block:JumpPagination length="5"}
+    				{block:CurrentPage}<span class="current-page">{PageNumber}</span>{/block:CurrentPage}
+    				{block:JumpPage}<a class="jump-page" href="{URL}">{PageNumber}</a>{/block:JumpPage}
+    			{/block:JumpPagination}
+    
+    			{block:NextPage}<a class="next" href="{NextPage}">{lang:Next}</a>{/block:NextPage}
+    		</div>
+    		{/block:Pagination}
+		{/block:IfNotUseInfiniteScrolling}
+	</section><!--close content-->
 
     <footer>
         <p>{text:Footer text}</p>
-        <a href="http://github.com/jacksondc/tumblr-library">Library Theme</a> by <a href="http://jacksondc.com">Jacksondc</a></p>
+        <p><a href="http://github.com/jacksondc/tumblr-library">Library Theme</a> by <a href="http://jacksondc.com">Jacksondc</a></p>
+</p>
     </footer>
 </body>
 </html>
