@@ -1,7 +1,7 @@
 Library
 ==============
 
-A tumblr theme to keep track of books. In use at [books.jacksondc.com](http://books.jacksondc.com).
+A tumblr theme for cataloging books. In use at [books.jacksondc.com](http://books.jacksondc.com).
 
 ##Details
 The Library theme only supports link posts. Put the book name as the title and the author as the caption. Supported tags are `reading`, `favorite`, `fiction`, and `nonfiction`.
