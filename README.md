@@ -13,4 +13,4 @@ Explanations for the less-obvious options.
 - **Disable Tumblr Controls** Hide the default follow and dashboard links.
 - **Epoch Year** Use fuzzy dates before the epoch year. Useful if you don't have exact dates for many books.
 - **Title/Body Font** Name of the font (e.g. Open Sans).
-- **Google Fonts URL** URL parameters for [Google Fonts](https://google.com/fonts) (e.g. Open+Sans:400).
+- **Google Fonts URL** URL parameters for [Google Fonts](https://www.google.com/fonts) (e.g. Open+Sans:400).
